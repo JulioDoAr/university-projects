@@ -1,38 +1,21 @@
-# TODO
-- Añadir contador de fichas en tablero funcional
+# Introduccion a los Computadores
 
-# mODIFICACION
+Universidad de Extremadura (Cáceres, España)
+2020-2021
 
-Modificar el funcionamiento del juego para que:
+## Game with Assembly
 
-1.- durante un movimiento de ficha (comando M), se pueda pasar por la casilla de inicio (introducida previamente con el comando I), situación que con el enunciado original no está permitido.
+### Knowledge
 
-Por ejemplo: "M NSE" en el juego original sería un movimiento inválido incluso aunque las casillas del Norte y Este de la posición de inicio del movimiento estuvieran vacías. Con la modificación, debe considerarse un movimiento válido.
-Se puede probar en el modo debug con los siguiente comandos:
+- Assembly
 
-I B,1
+### Exercise
 
-F B,0
+**Comando I:**  Comprobación de las coordenadas de inicio (existencia de la ficha en esa posición y escritura en fichasMov, sino mensaje de error correspondiente); si es correcta, mostrar información en la pantalla de juego. Nota: se permite volver a pedir la ficha de inicio, aun habiéndola pedido antes.
 
-M SNO  (este último comando es el que en la versión original del juego no era considerado un movimiento válido y ahora si).
+**Comando F:** Comprobación de las coordenadas de fin (no existencia de ficha en esa posición y gestión en fichasMov, sino mensaje de error correspondiente); si es correcta, mostrar información en la pantalla de juego. Nota: se permite volver a pedir el final, aun habiéndolo pedido antes.
 
-2.- Modificar el EQU correspondiente para que el juego pase a funcionar con 7 tipos de fichas diferentes, no 5 como hasta ahora.
-Para probarlo basta comprobar el modo aleatorio y ver que se generan nuevos tipos de fichas tanto en el tablero como en siguientes.
-Como hace falta asociar a las nuevas fichas dos nuevos colores, os damos la redefinición de:
-    colorFic      db 01h,0Ah,09h,08h,0Dh,0Eh,04h,0Fh
-
-
-
-# Cosas a mejorar
-- Reducir metodos MostrarMensajeX
-
-En esta práctica se realizarán todo lo relativo a la ejecución de los comandos:
-
-Comando I:  Comprobación de las coordenadas de inicio (existencia de la ficha en esa posición y escritura en fichasMov, sino mensaje de error correspondiente); si es correcta, mostrar información en la pantalla de juego. Nota: se permite volver a pedir la ficha de inicio, aun habiéndola pedido antes.
-
-Comando F: Comprobación de las coordenadas de fin (no existencia de ficha en esa posición y gestión en fichasMov, sino mensaje de error correspondiente); si es correcta, mostrar información en la pantalla de juego. Nota: se permite volver a pedir el final, aun habiéndolo pedido antes.
-
-Comando M: Comprobación de fichasMov para asegurarse que se han usado los comandos I y F antes del comando M. Comprobación de la trayectoria <inicio,final> (comprobar que la trayectoria no hace que la ficha se salga del tablero en ningún momento, que no pasa por casillas con ficha -incluida la inicial- y que llega a la casilla final que se había especificado con el comando F previamente). Si la trayectoria es incorrecta, sacar los mensajes pertinentes.
+**Comando M:** Comprobación de fichasMov para asegurarse que se han usado los comandos I y F antes del comando M. Comprobación de la trayectoria <inicio,final> (comprobar que la trayectoria no hace que la ficha se salga del tablero en ningún momento, que no pasa por casillas con ficha -incluida la inicial- y que llega a la casilla final que se había especificado con el comando F previamente). Si la trayectoria es incorrecta, sacar los mensajes pertinentes.
 
 Si la trayectoria es correcta (no es necesario seguir el orden de puntos indicados):
 
@@ -46,6 +29,24 @@ Si la trayectoria es correcta (no es necesario seguir el orden de puntos indicad
 
      3.- Reiniciar fichasMov y borrar de pantalla los valores antiguos.
 
-Comando E: Reinicio del juego. Nota: cuidado con reiniciar todas la variables necesarias (puntos, fichasMov, tableroJuego...).
+**Comando E:** Reinicio del juego. Nota: cuidado con reiniciar todas la variables necesarias (puntos, fichasMov, tableroJuego...).
 
-Comando S: Salir del juego (vuelta al sistema operativo).
+**Comando S:** Salir del juego (vuelta al sistema operativo).
+
+# Modification
+
+Modificar el funcionamiento del juego para que:
+
+1. Durante un movimiento de ficha (comando M), se pueda pasar por la casilla de inicio (introducida previamente con el comando I), situación que con el enunciado original no está permitido. Por ejemplo: "M NSE" en el juego original sería un movimiento inválido incluso aunque las casillas del Norte y Este de la posición de inicio del movimiento estuvieran vacías. Con la modificación, debe considerarse un movimiento válido.
+Se puede probar en el modo debug con los siguiente comandos:
+```
+I B,1
+
+F B,0
+
+M SNO  (este último comando es el que en la versión original del juego no era considerado un movimiento válido y ahora si).
+```
+2. Modificar el EQU correspondiente para que el juego pase a funcionar con 7 tipos de fichas diferentes, no 5 como hasta ahora.
+Para probarlo basta comprobar el modo aleatorio y ver que se generan nuevos tipos de fichas tanto en el tablero como en siguientes.
+Como hace falta asociar a las nuevas fichas dos nuevos colores, os damos la redefinición de:
+    colorFic      db 01h,0Ah,09h,08h,0Dh,0Eh,04h,0Fh
