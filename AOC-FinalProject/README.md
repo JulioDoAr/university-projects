@@ -1,7 +1,13 @@
 # Administración y Organización de Computadores
 
-Curso 2021-2022
+Universidad de Extremadura (Cáceres, España)
+2021-2022
 
-## Procesamiento de imágenes en ensamblador
+## Image processing with Assembly
 
-Para mas información, consultar [PracticaAOC.pdf](documentacion/practicaAOC.pdf)
+## Knowledge
+
+- Assembly
+- Image processing algorithms
+
+For more information, see [PracticaAOC.pdf](documentacion/practicaAOC.pdf)
