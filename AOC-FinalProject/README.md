@@ -3,11 +3,11 @@
 Universidad de Extremadura (Cáceres, España)
 2021-2022
 
-## Image processing with Assembly
+## Image processing algorithms
 
-## Knowledge
+### Knowledge
 
-- Assembly
+- C++
 - Image processing algorithms
 
 For more information, see [PracticaAOC.pdf](documentacion/practicaAOC.pdf)

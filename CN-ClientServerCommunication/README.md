@@ -5,7 +5,7 @@ Universitatea de Vest din Timișoara (Romania)
 
 ## Communication between client and server
 
-## Knowledge
+### Knowledge
 
 - Java
 - Maven
