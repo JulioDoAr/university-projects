@@ -1,0 +1,21 @@
+Table Bank {
+  id int [pk, increment]
+  name varchar
+}
+
+Table User {
+  id int [pk, increment] 
+  address varchar
+  bank int
+}
+
+Table Account {
+  id int [pk, increment]
+  amount float
+  code string
+  owner int
+  type int
+ }
+
+Ref: User.id < Account.owner
+Ref: User.bank < Bank.id
