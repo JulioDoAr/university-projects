@@ -21,4 +21,8 @@ Algorithms:
 - Climbing the steepest slope
 - First Best
 - Horizontal Search
-- 
+
+# Group Members
+
+- Dominguez Arjona, Julio
+- Eslava Velasco, Sergio
