@@ -1,4 +1,4 @@
-# Administración y Organización de Computadores
+# Procesamiento de imágenes con C++
 
 Universidad de Extremadura (Cáceres, España)
 2021-2022

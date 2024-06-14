@@ -5,6 +5,8 @@ Universitatea de Vest din Timișoara (Romania)
 
 ## Communication between client and server
 
+This projects is a client-server architecture implemented at Application level with raw code
+
 ### Knowledge
 
 - Java
