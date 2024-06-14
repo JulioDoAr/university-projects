@@ -1,0 +1,50 @@
+<head>
+    <title>Amazdont - Profile></title>
+</head>
+{% extends "web/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="row d-flex justify-content-left align-items-center" style="padding-left: 2%;">
+    <div class="col-md-6">
+
+        <br />
+        <h2>User Data</h2>
+        <br />
+
+        <p class="boxBlack" style="width: 80%;">
+            Username: {{ user.username }} </br>
+            First name: {{ user.first_name }} </br>
+            Last name: {{ user.last_name }} </br>
+            Email: {{ user.email }} </br>
+        </p>
+
+        {% for product in products %}
+
+        <p class="boxOrange">
+            {{ product.user }}
+            <b> {{ product.name }} </b> <br />
+            $&nbsp {{ product.price }}<br />
+
+            <a href="{% url 'web:product_details' id=product.id %}">
+                <button class="actionButton">Description</button>
+            </a> &nbsp
+
+            {% if product.status == 0 %}
+            <a href="{% url 'web:product_update' id=product.id %}">
+                <button class="actionButton">Edit</button>
+            </a> &nbsp
+            <a href="{% url 'web:product_delete' id=product.id %}">
+                <button class="actionButton">Delete</button>
+            </a>
+            {% else %}
+            SOLD
+            {% endif %}
+        </p>
+
+        {% endfor %}
+        {% endblock %}
+
+    </div>
+</div>

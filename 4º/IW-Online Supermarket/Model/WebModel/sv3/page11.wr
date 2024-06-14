@@ -1,0 +1,49 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="275" gr:y="860" id="sv3#page11" name="Importar Productos" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv3#page11#enu6" name="Importar Formulario" linkOrder="sv3#page11#enu6#ln2">
+      <Link id="sv3#page11#enu6#ln2" name="Importar" to="sv3#exu1" type="normal" validate="true">
+        <LinkParameter id="sv3#page11#enu6#ln2#par3" name="Archivo_BLOB" source="sv3#page11#enu6#fld17" target="sv3#exu1.blob"/>
+        <LinkParameter id="sv3#page11#enu6#ln2#par4" name="Archivo_PASSING" source="sv3#page11#enu6#fld17" passing="true"/>
+      </Link>
+      <Field id="sv3#page11#enu6#fld17" name="Archivo" type="blob" modifiable="true"/>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="175" gr:y="5" id="sv3#page11#mssu4" name="Message"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#enu6">
+          <layout:Link link="sv3#page11#enu6#ln2"/>
+          <layout:Field field="sv3#page11#enu6#fld17"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#mssu4"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

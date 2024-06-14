@@ -1,0 +1,35 @@
+.payment-table {
+    background-color: gainsboro;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+    padding: 3px;
+    border: #212529;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.table-body-row {
+    border-bottom: 1px solid #212529;
+}
+
+.table-head-tr {
+    font-weight: bold;
+}
+
+.table-body-price {
+    text-align: right;
+}
+
+.table-body-quantity {
+    text-align: right;
+}
+
+.table-body-total {
+    text-align: right;
+}
+
+.table-total-value {
+    text-align: right;
+}

@@ -1,0 +1,119 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Usuario" protected="true" homePage="sv2#page6" landmarks="sv2#lou2 sv2#page6 sv2#page10 sv2#page4">
+  <OperationUnits>
+    <LogoutUnit gr:x="590" gr:y="130" id="sv2#lou2" name="Salir" siteView="sv1" landmark="true" invalidateSession="true"/>
+    <SelectorUnit id="sv2#seu2" name="FiltroProductos" gr:x="350" gr:y="245" entity="ent1">
+      <Selector id="sv2#seu2#su3" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu2#su3#acond1" name="NameCondition" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att2" ignoreCase="true"/>
+        <AttributesCondition id="sv2#seu2#su3#acond2" name="MaxCondition" predicate="lteq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
+        <AttributesCondition id="sv2#seu2#su3#acond3" name="MinCondition" predicate="gteq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
+      </Selector>
+      <OKLink id="sv2#seu2#oln3" name="OKFlow2" to="sv2#page6#inu2" automaticCoupling="true"/>
+    </SelectorUnit>
+    <CreateUnit gr:x="285" gr:y="420" id="sv2#cru2" name="A&#241;adirCarrito" entity="ent3">
+      <OKLink id="sv2#cru2#oln10" name="OKFlow10" to="sv2#page10#inu4" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="-30" gr:y="265" id="sv2#seu5" name="SeleccionarCarrito" entity="ent1" linkOrder="sv2#seu5#ln13">
+      <Selector id="sv2#seu5#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#seu5#su7#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#seu5#oln7" name="OKFlow7" to="sv2#seu6">
+        <LinkParameter id="sv2#seu5#oln7#par28" name="oid_AttCondition7" source="ent1#att1Array" target="sv2#seu6#su10#acond7"/>
+      </OKLink>
+      <Link id="sv2#seu5#ln13" name="Flow13" to="sv2#cru2" type="transport" validate="true">
+        <LinkParameter id="sv2#seu5#ln13#par37" name="1_amount" sourceValue="1" target="sv2#cru2.ent3#att11"/>
+        <LinkParameter id="sv2#seu5#ln13#par38" name="name_productNameC" source="ent1#att2Array" target="sv2#cru2.ent3#att6"/>
+        <LinkParameter id="sv2#seu5#ln13#par39" name="oid_productOidC" source="ent1#att1Array" target="sv2#cru2.ent3#att7"/>
+        <LinkParameter id="sv2#seu5#ln13#par40" name="price_productPriceC" source="ent1#att4Array" target="sv2#cru2.ent3#att10"/>
+      </Link>
+    </SelectorUnit>
+    <DeleteUnit gr:x="820" gr:y="680" id="sv2#dlu1" name="EliminarCarrito" entity="ent3">
+      <Selector id="sv2#dlu1#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dlu1#su8#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#dlu1#oln17" name="OKFlow17" to="sv2#page10" automaticCoupling="true"/>
+    </DeleteUnit>
+    <ModifyUnit gr:x="530" gr:y="545" id="sv2#mfu1" name="A&#241;adirUnidad" entity="ent3">
+      <Selector id="sv2#mfu1#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu1#su9#kcond7" name="KeyCondition7" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu1#oln12" name="OKFlow12" to="sv2#page10#inu4" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="-40" gr:y="475" id="sv2#seu6" name="existe?" entity="ent3">
+      <Selector id="sv2#seu6#su10" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu6#su10#acond7" name="AttCondition7" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att7"/>
+      </Selector>
+      <OKLink id="sv2#seu6#oln9" name="OKFlow9" to="sv2#inn1">
+        <LinkParameter id="sv2#seu6#oln9#par29" name="oid_Input" source="ent3#att8Array" target="sv2#inn1.isnotnull"/>
+      </OKLink>
+      <Link id="sv2#seu6#ln11" name="Flow11" to="sv2#mathu1" type="transport" validate="true" gr:bendpoints="137,90,-248,30">
+        <LinkParameter id="sv2#seu6#ln11#par36" name="amount_cantidad" source="ent3#att11Array" target="sv2#mathu1#mathv1"/>
+      </Link>
+      <Link id="sv2#seu6#ln12" name="Flow12" to="sv2#mfu1" automaticCoupling="true" type="transport" validate="true" gr:bendpoints="111,155,-459,85"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="160" gr:y="495" id="sv2#inn1" name="no es nulo?" emptyStringAsNull="true">
+      <OKLink id="sv2#inn1#oln8" name="OKFlow8" to="sv2#mathu1" automaticCoupling="true"/>
+      <KOLink id="sv2#inn1#kln2" name="KOFlow2" to="sv2#cru2" automaticCoupling="true"/>
+    </IsNotNullUnit>
+    <MathUnit gr:x="340" gr:y="550" id="sv2#mathu1" name="sumar 1 carrito" resultType="integer" defaultExpression="cantidad + 1">
+      <MathVariable id="sv2#mathu1#mathv1" name="cantidad"/>
+      <OKLink id="sv2#mathu1#oln11" name="OKFlow11" to="sv2#mfu1">
+        <LinkParameter id="sv2#mathu1#oln11#par41" name="Result_amount" source="result" target="sv2#mfu1.ent3#att11"/>
+      </OKLink>
+    </MathUnit>
+    <MathUnit gr:x="1025" gr:y="795" id="sv2#mathu2" name="restar 1 carrito" resultType="integer" defaultExpression="amount-1">
+      <OKLink id="sv2#mathu2#oln14" name="OKFlow14" to="sv2#switch1">
+        <LinkParameter id="sv2#mathu2#oln14#par43" name="Result_Switch" source="result" target="sv2#switch1.switch"/>
+      </OKLink>
+      <MathVariable id="sv2#mathu2#mathv2" name="amount"/>
+    </MathUnit>
+    <ModifyUnit gr:x="895" gr:y="505" id="sv2#mfu3" name="Update3" entity="ent3">
+      <Selector id="sv2#mfu3#su14" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu3#su14#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu3#oln6" name="OKFlow6" to="sv2#page10"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="1140" gr:y="365" id="sv2#mfu2" name="Update2" entity="User">
+      <Selector id="sv2#mfu2#su11" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu2#su11#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu2#oln4" name="OKFlow4" to="sv2#page4" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="570" gr:y="790" id="sv2#seu11" name="Seleccionar Carrito" entity="ent3">
+      <Selector id="sv2#seu11#su17" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu11#su17#acond9" name="AttCondition9" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att8"/>
+      </Selector>
+      <OKLink id="sv2#seu11#oln13" name="OKFlow13" to="sv2#mathu2">
+        <LinkParameter id="sv2#seu11#oln13#par71" name="amount_amount" source="ent3#att11Array" target="sv2#mathu2#mathv2"/>
+      </OKLink>
+      <Link id="sv2#seu11#ln25" name="Flow25" to="sv2#dlu1" type="transport" validate="true">
+        <LinkParameter id="sv2#seu11#ln25#par47" name="oid_KeyCondition6 [oid]" source="ent3#att8Array" target="sv2#dlu1#su8#kcond6.ent3#att8"/>
+      </Link>
+      <Link id="sv2#seu11#ln26" name="Flow26" to="sv2#mfu3" type="transport" validate="true">
+        <LinkParameter id="sv2#seu11#ln26#par55" name="oid_KeyCondition11 [oid]" source="ent3#att8Array" target="sv2#mfu3#su14#kcond11.ent3#att8"/>
+      </Link>
+    </SelectorUnit>
+    <SwitchUnit gr:x="1030" gr:y="640" id="sv2#switch1" name="Switch1">
+      <OKLink id="sv2#switch1#oln19" name="OKFlow19" to="sv2#dlu1" code="0" automaticCoupling="true"/>
+      <Case value="0"/>
+      <Case value="1"/>
+      <OKLink id="sv2#switch1#oln16" name="OKFlow16" to="sv2#mfu3">
+        <LinkParameter id="sv2#switch1#oln16#par68" name="Switch_amount" source="switch" target="sv2#mfu3.ent3#att11"/>
+      </OKLink>
+    </SwitchUnit>
+    <SelectorUnit gr:x="840" gr:y="345" id="sv2#seu8" name="SeleccionarCarrito" entity="ent3">
+      <Selector id="sv2#seu8#su13" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv2#seu8#su13#acond11" name="AttCondition11" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att8"/>
+      </Selector>
+      <OKLink id="sv2#seu8#oln20" name="OKFlow20" to="sv2#mathu3">
+        <LinkParameter id="sv2#seu8#oln20#par73" name="amount_amount" source="ent3#att11Array" target="sv2#mathu3#mathv3"/>
+      </OKLink>
+      <Link id="sv2#seu8#ln24" name="Flow24" to="sv2#mfu3" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+    <MathUnit gr:x="1035" gr:y="480" id="sv2#mathu3" name="sumar 1 carrito" resultType="float" defaultExpression="amount+1">
+      <MathVariable id="sv2#mathu3#mathv3" name="amount"/>
+      <OKLink id="sv2#mathu3#oln21" name="OKFlow21" to="sv2#mfu3">
+        <LinkParameter id="sv2#mathu3#oln21#par74" name="Result_amount" source="result" target="sv2#mfu3.ent3#att11"/>
+      </OKLink>
+    </MathUnit>
+  </OperationUnits>
+</SiteView>

@@ -1,0 +1,102 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="725" gr:y="55" id="sv2#page4" name="Perfil" landmark="true">
+  <ContentUnits>
+    <DataUnit gr:x="5" gr:y="0" id="sv2#page4#dau3" name="Mis Datos" entity="User" displayAttributes="userName password email User#att12 User#att13">
+      <Selector id="sv2#page4#dau3#su15" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page4#dau3#su15#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit gr:x="185" gr:y="0" id="sv2#page4#gtu1" name="Get1" contextParameters="UserCtxParam">
+      <Link id="sv2#page4#gtu1#ln19" name="Flow19" to="sv2#page4#seu7" automaticCoupling="true" type="transport" validate="true"/>
+    </GetUnit>
+    <EntryUnit gr:x="0" gr:y="120" id="sv2#page4#enu5" name="Actualizar Mi Perfil" entity="User" linkOrder="sv2#page4#enu5#ln15">
+      <Link id="sv2#page4#enu5#ln15" name="Actualizar Perfil" to="sv2#mfu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page4#enu5#ln15#par52" name="Key [oid]_KeyCondition8 [oid]" source="key.userOID" target="sv2#mfu2#su11#kcond8.userOID"/>
+        <LinkParameter id="sv2#page4#enu5#ln15#par61" name="address_address" source="sv2#page4#enu5#fld16" target="sv2#mfu2.User#att13"/>
+        <LinkParameter id="sv2#page4#enu5#ln15#par62" name="phone_phone" source="sv2#page4#enu5#fld15" target="sv2#mfu2.User#att12"/>
+        <LinkParameter id="sv2#page4#enu5#ln15#par63" name="email_email" source="sv2#page4#enu5#fld14" target="sv2#mfu2.email"/>
+        <LinkParameter id="sv2#page4#enu5#ln15#par64" name="password_password" source="sv2#page4#enu5#fld13" target="sv2#mfu2.password"/>
+        <LinkParameter id="sv2#page4#enu5#ln15#par65" name="userName_userName" source="sv2#page4#enu5#fld12" target="sv2#mfu2.userName"/>
+      </Link>
+      <Field id="sv2#page4#enu5#fld12" name="userName" type="string" modifiable="true" attribute="userName" preloaded="true"/>
+      <Field id="sv2#page4#enu5#fld13" name="password" type="password" modifiable="true" attribute="password" preloaded="true"/>
+      <Field id="sv2#page4#enu5#fld14" name="email" type="string" modifiable="true" attribute="email" preloaded="true"/>
+      <Field id="sv2#page4#enu5#fld15" name="phone" type="integer" modifiable="true" attribute="User#att12" preloaded="true"/>
+      <Field id="sv2#page4#enu5#fld16" name="address" type="string" modifiable="true" attribute="User#att13" preloaded="true"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="200" gr:y="120" id="sv2#page4#seu7" name="Selector7" entity="User">
+      <Selector id="sv2#page4#seu7#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page4#seu7#su12#kcond9" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page4#seu7#ln20" name="Flow20" to="sv2#page4#dau3" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv2#page4#seu7#ln21" name="Flow21" to="sv2#page4#enu5" type="transport" validate="true">
+        <LinkParameter id="sv2#page4#seu7#ln21#par53" name="address_address" source="User#att13Array" target="sv2#page4#enu5#fld16_slot"/>
+        <LinkParameter id="sv2#page4#seu7#ln21#par54" name="email_email" source="emailArray" target="sv2#page4#enu5#fld14_slot"/>
+        <LinkParameter id="sv2#page4#seu7#ln21#par56" name="oid_Key Condition [oid]" source="userOIDArray" target="sv2#page4#enu5.userOID"/>
+        <LinkParameter id="sv2#page4#seu7#ln21#par57" name="password_password" source="passwordArray" target="sv2#page4#enu5#fld13_slot"/>
+        <LinkParameter id="sv2#page4#seu7#ln21#par59" name="phone_phone" source="User#att12Array" target="sv2#page4#enu5#fld15_slot"/>
+        <LinkParameter id="sv2#page4#seu7#ln21#par60" name="userName_userName" source="userNameArray" target="sv2#page4#enu5#fld12_slot"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page4#dau3">
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="password"/>
+          <layout:Attribute attribute="email"/>
+          <layout:Attribute attribute="User#att12"/>
+          <layout:Attribute attribute="User#att13"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page4#enu5">
+          <layout:Link link="sv2#page4#enu5#ln15"/>
+          <layout:Field field="sv2#page4#enu5#fld12"/>
+          <layout:Field field="sv2#page4#enu5#fld13"/>
+          <layout:Field field="sv2#page4#enu5#fld14"/>
+          <layout:Field field="sv2#page4#enu5#fld15"/>
+          <layout:Field field="sv2#page4#enu5#fld16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

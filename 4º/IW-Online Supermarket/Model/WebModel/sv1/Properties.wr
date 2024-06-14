@@ -1,0 +1,54 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="publico" homePage="sv1#page2" landmarks="sv1#page2 sv1#page1 sv1#page3">
+  <OperationUnits>
+    <LoginUnit gr:x="635" gr:y="245" id="sv1#lgu1" name="Login1">
+      <KOLink id="sv1#lgu1#kln1" name="KOFlow1" to="sv1#page1#mssu1">
+        <LinkParameter id="sv1#lgu1#kln1#par9" name="Usuario no encontrado_Shown Messages" sourceValue="Usuario no encontrado" target="sv1#page1#mssu1.shownMessages"/>
+      </KOLink>
+    </LoginUnit>
+    <CreateUnit gr:x="740" gr:y="365" id="sv1#cru1" name="Create1" entity="User">
+      <OKLink id="sv1#cru1#oln1" name="OKFlow1" to="sv1#page1#mssu1">
+        <LinkParameter id="sv1#cru1#oln1#par8" name="Usuario creado_Shown Messages" sourceValue="Usuario creado" target="sv1#page1#mssu1.shownMessages"/>
+      </OKLink>
+    </CreateUnit>
+    <SelectorUnit gr:x="190" gr:y="660" id="sv1#seu1" name="FiltroProductos" entity="ent1">
+      <Selector id="sv1#seu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu1#su1#acond4" name="NameCondition" predicate="contains" booleanOperator="or" implied="true" attributes="ent1#att2" ignoreCase="true"/>
+        <AttributesCondition id="sv1#seu1#su1#acond5" name="MaxCondition" predicate="lteq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
+        <AttributesCondition id="sv1#seu1#su1#acond6" name="MinCondition" predicate="gteq" booleanOperator="or" implied="true" attributes="ent1#att4"/>
+      </Selector>
+      <OKLink id="sv1#seu1#oln2" name="OKFlow2" to="sv1#page2#inu1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="840" gr:y="640" id="sv1#inn2" name="Is Not Null2" emptyStringAsNull="true">
+      <OKLink id="sv1#inn2#oln5" name="OKFlow5" to="sv1#inn3">
+        <LinkParameter id="sv1#inn2#oln5#par35" name="password_PASSING_Input" sourceLinkParameter="sv1#page3#enu2#ln9#par33" target="sv1#inn3.isnotnull"/>
+        <LinkParameter id="sv1#inn2#oln5#par44" name="password_PASSING" sourceLinkParameter="sv1#page3#enu2#ln9#par33" passing="true"/>
+        <LinkParameter id="sv1#inn2#oln5#par45" name="userName_PASSING" sourceLinkParameter="sv1#page3#enu2#ln9#par34" passing="true"/>
+      </OKLink>
+      <KOLink id="sv1#inn2#kln3" name="KOFlow3" to="sv1#page3#mssu3">
+        <LinkParameter id="sv1#inn2#kln3#par22" name="Debes rellenar el campo del usuario_Shown Messages" sourceValue="Debes rellenar el campo del usuario" target="sv1#page3#mssu3.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="1050" gr:y="505" id="sv1#seu9" name="Selector9" entity="User">
+      <Selector id="sv1#seu9#su16" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu9#su16#acond8" name="Username" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="sv1#seu9#oln18" name="OKFlow18" to="sv1#inn4">
+        <LinkParameter id="sv1#seu9#oln18#par24" name="userName_Input" source="userNameArray" target="sv1#inn4.isnotnull"/>
+      </OKLink>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="890" gr:y="770" id="sv1#inn3" name="Is Not Null3" emptyStringAsNull="true">
+      <OKLink id="sv1#inn3#oln15" name="OKFlow15" to="sv1#seu9">
+        <LinkParameter id="sv1#inn3#oln15#par46" name="userName_PASSING_Username" sourceLinkParameter="sv1#inn2#oln5#par45" target="sv1#seu9#su16#acond8"/>
+      </OKLink>
+      <KOLink id="sv1#inn3#kln4" name="KOFlow4" to="sv1#page3#mssu3">
+        <LinkParameter id="sv1#inn3#kln4#par42" name="Campo de la contrase&#241;a no rellenada_Shown Messages" sourceValue="Campo de la contrase&#241;a no rellenada" target="sv1#page3#mssu3.shownMessages"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="1060" gr:y="390" id="sv1#inn4" name="Is Not Null4" emptyStringAsNull="true">
+      <OKLink id="sv1#inn4#oln22" name="OKFlow22" to="sv1#page3#mssu3">
+        <LinkParameter id="sv1#inn4#oln22#par32" name="Usuario ya registrado_Shown Messages" sourceValue="Usuario ya registrado" target="sv1#page3#mssu3.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv1#inn4#kln5" name="KOFlow5" to="sv1#cru1" automaticCoupling="true"/>
+    </IsNotNullUnit>
+  </OperationUnits>
+</SiteView>

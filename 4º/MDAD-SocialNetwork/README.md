@@ -31,11 +31,11 @@ To create the diagrams. [DBDiagram](https://dbdiagram.io/home)
 
 ## Eclipse
 
-[Eclipse](https://eclipseide.org/) as IDE for the Java project
+[Eclipse](https://eclipseide.org/) as IDE for the Java project.
 
 ## Visual Studio Code
 
-[VSCode](https://code.visualstudio.com/) As IDE for the Jupyther Notebook
+[VSCode](https://code.visualstudio.com/) as IDE for the Jupyther Notebook.
 
 # Developers
 This project was made in group with:

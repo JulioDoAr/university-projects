@@ -1,0 +1,126 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Administrador" protected="true" homePage="sv3#page5" landmarks="sv3#page7 sv3#page8 sv3#page9 sv3#page11 sv3#lou1">
+  <OperationUnits>
+    <LogoutUnit gr:x="110" gr:y="205" id="sv3#lou1" name="Salir" siteView="sv1" landmark="true"/>
+    <ExcelUnit gr:x="320" gr:y="1030" id="sv3#exu1" name="Importar Productos" mode="read" format="xls" sourceType="blob" useHeader="false" cellInfoOrder="sv3#exu1#ci1 sv3#exu1#ci2 sv3#exu1#ci3 sv3#exu1#ci4">
+      <CellInfo id="sv3#exu1#ci1" name="Name" type="string" preserveCellStyle="false" autoSizeColumn="true" contentType="text/plain" column="1" sheet="1"/>
+      <CellInfo id="sv3#exu1#ci2" name="Description" type="string" preserveCellStyle="false" autoSizeColumn="true" column="2" contentType="text/plain" sheet="1" removeBlankRows="false"/>
+      <CellInfo id="sv3#exu1#ci3" name="Price" type="float" preserveCellStyle="false" autoSizeColumn="true" column="3" sheet="1"/>
+      <CellInfo id="sv3#exu1#ci4" name="Stock" type="integer" preserveCellStyle="false" autoSizeColumn="true" column="4" sheet="1"/>
+      <OKLink id="sv3#exu1#oln23" name="OKFlow23" to="sv3#lpu1">
+        <LinkParameter id="sv3#exu1#oln23#par5" name="Description_Descriptions" source="sv3#exu1#ci2Array" target="sv3#lpu1#lsa1"/>
+        <LinkParameter id="sv3#exu1#oln23#par6" name="Archivo_PASSING_Input Array" target="sv3#lpu1.array" source="sv3#exu1#ci1Array"/>
+        <LinkParameter id="sv3#exu1#oln23#par7" name="Name_Names" source="sv3#exu1#ci1Array" target="sv3#lpu1#lsa2"/>
+        <LinkParameter id="sv3#exu1#oln23#par48" name="Price_Prices" source="sv3#exu1#ci3Array" target="sv3#lpu1#lsa3"/>
+        <LinkParameter id="sv3#exu1#oln23#par49" name="Stock_Stocks" source="sv3#exu1#ci4Array" target="sv3#lpu1#lsa4"/>
+      </OKLink>
+      <KOLink id="sv3#exu1#kln6" name="KOFlow6" to="sv3#page11#mssu4">
+        <LinkParameter id="sv3#exu1#kln6#par70" name="Error leyendo el archivo XML_Shown Messages" sourceValue="Error leyendo el archivo XML" target="sv3#page11#mssu4.shownMessages"/>
+      </KOLink>
+    </ExcelUnit>
+    <LoopUnit gr:x="730" gr:y="970" id="sv3#lpu1" name="Loop1">
+      <SecondaryArray id="sv3#lpu1#lsa1" name="Descriptions"/>
+      <SecondaryArray id="sv3#lpu1#lsa2" name="Names"/>
+      <SecondaryArray id="sv3#lpu1#lsa3" name="Prices"/>
+      <SecondaryArray id="sv3#lpu1#lsa4" name="Stocks"/>
+      <OKLink id="sv3#lpu1#oln24" name="Next" to="sv3#cru3" code="next">
+        <LinkParameter id="sv3#lpu1#oln24#par50" name="Next Element (Descriptions)_description" source="sv3#lpu1#lsa1" target="sv3#cru3.ent1#att3"/>
+        <LinkParameter id="sv3#lpu1#oln24#par51" name="Next Element (Names)_name" source="sv3#lpu1#lsa2" target="sv3#cru3.ent1#att2"/>
+        <LinkParameter id="sv3#lpu1#oln24#par58" name="Next Element (Prices)_price" source="sv3#lpu1#lsa3" target="sv3#cru3.ent1#att4"/>
+        <LinkParameter id="sv3#lpu1#oln24#par66" name="Next Element (Stocks)_Stock" source="sv3#lpu1#lsa4" target="sv3#cru3.ent1#att5"/>
+      </OKLink>
+      <OKLink id="sv3#lpu1#oln26" name="end" to="sv3#page11#mssu4" code="end">
+        <LinkParameter id="sv3#lpu1#oln26#par67" name="Se han a&#241;adido correctamente los elementos_Shown Messages" sourceValue="Se han a&#241;adido correctamente los elementos" target="sv3#page11#mssu4.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <CreateUnit gr:x="745" gr:y="840" id="sv3#cru3" name="Create Product" entity="ent1">
+      <OKLink id="sv3#cru3#oln25" name="ok" to="sv3#lpu1" automaticCoupling="true" gr:bendpoints="-137,25,113,5"/>
+    </CreateUnit>
+    <CreateUnit gr:x="905" gr:y="540" id="sv3#cru4" name="Create4" entity="User">
+      <OKLink id="sv3#cru4#oln34" name="OKFlow34" to="sv3#page8" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="905" gr:y="275" id="sv3#cru5" name="Create5" entity="ent1">
+      <OKLink id="sv3#cru5#oln32" name="OKFlow32" to="sv3#page7" automaticCoupling="true"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="115" gr:y="315" id="sv3#dlu2" name="Delete2" entity="ent1">
+      <Selector id="sv3#dlu2#su19" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu2#su19#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu2#oln28" name="OKFlow28" to="sv3#page7" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="115" gr:y="540" id="sv3#dlu3" name="Delete3" entity="User">
+      <Selector id="sv3#dlu3#su22" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#dlu3#su22#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#dlu3#oln27" name="OKFlow27" to="sv3#page8" automaticCoupling="true"/>
+    </DeleteUnit>
+    <ModifyUnit gr:x="905" gr:y="430" id="sv3#mfu4" name="Update4" entity="ent1">
+      <Selector id="sv3#mfu4#su18" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu4#su18#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu4#oln33" name="OKFlow33" to="sv3#page7" automaticCoupling="true"/>
+    </ModifyUnit>
+    <ModifyUnit gr:x="905" gr:y="670" id="sv3#mfu5" name="Update5" entity="User">
+      <Selector id="sv3#mfu5#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#mfu5#su20#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv3#mfu5#oln35" name="OKFlow35" to="sv3#page8" automaticCoupling="true"/>
+    </ModifyUnit>
+    <SelectorUnit gr:x="410" gr:y="750" id="sv3#seu10" name="Selector10" entity="User" distinctAttributes="userOID" distinct="false">
+      <OKLink id="sv3#seu10#oln30" name="OKFlow30" to="sv3#page8#enu8">
+        <LinkParameter id="sv3#seu10#oln30#par80" name="address_address" source="User#att13Array" target="sv3#page8#enu8#fld26_slot"/>
+        <LinkParameter id="sv3#seu10#oln30#par81" name="email_email" source="emailArray" target="sv3#page8#enu8#fld24_slot"/>
+        <LinkParameter id="sv3#seu10#oln30#par82" name="oid_Key Condition [oid]" source="userOIDArray" target="sv3#page8#enu8.userOID"/>
+        <LinkParameter id="sv3#seu10#oln30#par83" name="password_password" source="passwordArray" target="sv3#page8#enu8#fld23_slot"/>
+        <LinkParameter id="sv3#seu10#oln30#par84" name="phone_phone" source="User#att12Array" target="sv3#page8#enu8#fld25_slot"/>
+        <LinkParameter id="sv3#seu10#oln30#par85" name="userName_userName" source="userNameArray" target="sv3#page8#enu8#fld22_slot"/>
+      </OKLink>
+      <Selector id="sv3#seu10#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu10#su6#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <IsNotNullUnit gr:x="695" gr:y="375" id="sv3#inn5" name="Is Not Null5">
+      <OKLink id="sv3#inn5#oln31" name="OKFlow31" to="sv3#mfu4">
+        <LinkParameter id="sv3#inn5#oln31#par95" name="description_PASSING_description" sourceLinkParameter="sv3#page7#enu7#ln28#par87" target="sv3#mfu4.ent1#att3"/>
+        <LinkParameter id="sv3#inn5#oln31#par96" name="name_PASSING_name" sourceLinkParameter="sv3#page7#enu7#ln28#par88" target="sv3#mfu4.ent1#att2"/>
+        <LinkParameter id="sv3#inn5#oln31#par97" name="price_PASSING_price" sourceLinkParameter="sv3#page7#enu7#ln28#par89" target="sv3#mfu4.ent1#att4"/>
+        <LinkParameter id="sv3#inn5#oln31#par98" name="Stock_PASSING_Stock" sourceLinkParameter="sv3#page7#enu7#ln28#par90" target="sv3#mfu4.ent1#att5"/>
+        <LinkParameter id="sv3#inn5#oln31#par101" name="Key [oid]_PASSING_KeyCondition10 [oid]" sourceLinkParameter="sv3#page7#enu7#ln28#par99" target="sv3#mfu4#su18#kcond10.ent1#att1"/>
+      </OKLink>
+      <KOLink id="sv3#inn5#kln7" name="KOFlow7" to="sv3#cru5">
+        <LinkParameter id="sv3#inn5#kln7#par91" name="description_PASSING_description" sourceLinkParameter="sv3#page7#enu7#ln28#par87" target="sv3#cru5.ent1#att3"/>
+        <LinkParameter id="sv3#inn5#kln7#par92" name="name_PASSING_name" sourceLinkParameter="sv3#page7#enu7#ln28#par88" target="sv3#cru5.ent1#att2"/>
+        <LinkParameter id="sv3#inn5#kln7#par93" name="price_PASSING_price" sourceLinkParameter="sv3#page7#enu7#ln28#par89" target="sv3#cru5.ent1#att4"/>
+        <LinkParameter id="sv3#inn5#kln7#par94" name="Stock_PASSING_Stock" sourceLinkParameter="sv3#page7#enu7#ln28#par90" target="sv3#cru5.ent1#att5"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <IsNotNullUnit gr:x="670" gr:y="630" id="sv3#inn6" name="Is Not Null6">
+      <OKLink id="sv3#inn6#oln29" name="OKFlow29" to="sv3#mfu5">
+        <LinkParameter id="sv3#inn6#oln29#par109" name="address_PASSING_address" sourceLinkParameter="sv3#page8#enu8#ln29#par104" target="sv3#mfu5.User#att13"/>
+        <LinkParameter id="sv3#inn6#oln29#par110" name="email_PASSING_email" sourceLinkParameter="sv3#page8#enu8#ln29#par105" target="sv3#mfu5.email"/>
+        <LinkParameter id="sv3#inn6#oln29#par111" name="password_PASSING_password" sourceLinkParameter="sv3#page8#enu8#ln29#par106" target="sv3#mfu5.password"/>
+        <LinkParameter id="sv3#inn6#oln29#par112" name="phone_PASSING_phone" sourceLinkParameter="sv3#page8#enu8#ln29#par107" target="sv3#mfu5.User#att12"/>
+        <LinkParameter id="sv3#inn6#oln29#par113" name="userName_PASSING_userName" sourceLinkParameter="sv3#page8#enu8#ln29#par108" target="sv3#mfu5.userName"/>
+        <LinkParameter id="sv3#inn6#oln29#par120" name="Key [oid]_PASSING_KeyCondition14 [oid]" sourceLinkParameter="sv3#page8#enu8#ln29#par119" target="sv3#mfu5#su20#kcond14.userOID"/>
+      </OKLink>
+      <KOLink id="sv3#inn6#kln8" name="KOFlow8" to="sv3#cru4">
+        <LinkParameter id="sv3#inn6#kln8#par114" name="address_PASSING_address" sourceLinkParameter="sv3#page8#enu8#ln29#par104" target="sv3#cru4.User#att13"/>
+        <LinkParameter id="sv3#inn6#kln8#par115" name="email_PASSING_email" sourceLinkParameter="sv3#page8#enu8#ln29#par105" target="sv3#cru4.email"/>
+        <LinkParameter id="sv3#inn6#kln8#par116" name="password_PASSING_password" sourceLinkParameter="sv3#page8#enu8#ln29#par106" target="sv3#cru4.password"/>
+        <LinkParameter id="sv3#inn6#kln8#par117" name="phone_PASSING_phone" sourceLinkParameter="sv3#page8#enu8#ln29#par107" target="sv3#cru4.User#att12"/>
+        <LinkParameter id="sv3#inn6#kln8#par118" name="userName_PASSING_userName" sourceLinkParameter="sv3#page8#enu8#ln29#par108" target="sv3#cru4.userName"/>
+      </KOLink>
+    </IsNotNullUnit>
+    <SelectorUnit gr:x="430" gr:y="485" id="sv3#seu13" name="Selector13" entity="ent1">
+      <Link id="sv3#seu13#ln8" name="Flow8" to="sv3#page7#enu7" type="transport" validate="true">
+        <LinkParameter id="sv3#seu13#ln8#par75" name="description_description" source="ent1#att3Array" target="sv3#page7#enu7#fld19_slot"/>
+        <LinkParameter id="sv3#seu13#ln8#par76" name="oid_Key Condition [oid]" source="ent1#att1Array" target="sv3#page7#enu7.ent1#att1"/>
+        <LinkParameter id="sv3#seu13#ln8#par77" name="name_name" source="ent1#att2Array" target="sv3#page7#enu7#fld18_slot"/>
+        <LinkParameter id="sv3#seu13#ln8#par78" name="price_price" source="ent1#att4Array" target="sv3#page7#enu7#fld20_slot"/>
+        <LinkParameter id="sv3#seu13#ln8#par79" name="Stock_Stock" source="ent1#att5Array" target="sv3#page7#enu7#fld21_slot"/>
+      </Link>
+      <Selector id="sv3#seu13#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#seu13#su5#kcond3" name="oid" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+  </OperationUnits>
+</SiteView>

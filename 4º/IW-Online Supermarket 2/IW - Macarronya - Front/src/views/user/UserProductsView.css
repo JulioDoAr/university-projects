@@ -1,0 +1,9 @@
+.products-list {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    gap: 1rem;
+    grid-auto-rows: minmax(200px, auto);
+}

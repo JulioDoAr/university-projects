@@ -1,0 +1,86 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="280" gr:y="580" id="sv3#page8" name="Usuarios" landmark="true" protected="false">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv3#page8#pwu1" name="Lista usuarios" sortable="true" checkable="false" useCountQuery="false" entity="User" displayAttributes="userName" linkOrder="sv3#page8#pwu1#ln14 sv3#page8#pwu1#ln27">
+      <Link id="sv3#page8#pwu1#ln14" name="Eliminar" to="sv3#dlu3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#page8#pwu1#ln27" name="Ver" to="sv3#seu10" type="normal" validate="true">
+        <LinkParameter id="sv3#page8#pwu1#ln27#par100" name="oid_Max Results" source="data[].userOID" target="sv3#seu10.maxResults"/>
+        <LinkParameter id="sv3#page8#pwu1#ln27#par102" name="oid_KeyCondition4 [oid]" source="data[].userOID" target="sv3#seu10#su6#kcond4.userOID"/>
+      </Link>
+    </PowerIndexUnit>
+    <EntryUnit gr:x="215" gr:y="5" id="sv3#page8#enu8" name="Form8" entity="User" linkOrder="sv3#page8#enu8#ln29">
+      <Link id="sv3#page8#enu8#ln29" name="Crear/Cambiar" to="sv3#inn6" type="normal" validate="true">
+        <LinkParameter id="sv3#page8#enu8#ln29#par103" name="Key [oid]_Input" source="key.userOID" target="sv3#inn6.isnotnull"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par104" name="address_PASSING" source="sv3#page8#enu8#fld26" passing="true"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par105" name="email_PASSING" source="sv3#page8#enu8#fld24" passing="true"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par106" name="password_PASSING" source="sv3#page8#enu8#fld23" passing="true"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par107" name="phone_PASSING" source="sv3#page8#enu8#fld25" passing="true"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par108" name="userName_PASSING" source="sv3#page8#enu8#fld22" passing="true"/>
+        <LinkParameter id="sv3#page8#enu8#ln29#par119" name="Key [oid]_PASSING" source="key.userOID" passing="true"/>
+      </Link>
+      <Field id="sv3#page8#enu8#fld22" name="userName" type="string" modifiable="true" attribute="userName" preloaded="true"/>
+      <Field id="sv3#page8#enu8#fld23" name="password" type="password" modifiable="true" attribute="password" preloaded="true"/>
+      <Field id="sv3#page8#enu8#fld24" name="email" type="string" modifiable="true" attribute="email" preloaded="true"/>
+      <Field id="sv3#page8#enu8#fld25" name="phone" type="integer" modifiable="true" attribute="User#att12" preloaded="true"/>
+      <Field id="sv3#page8#enu8#fld26" name="address" type="string" modifiable="true" attribute="User#att13" preloaded="true"/>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="9" rowspan="3">
+        <layout:Unit unitId="sv3#page8#pwu1">
+          <layout:Attribute attribute="userName"/>
+          <layout:Link link="sv3#page8#pwu1#ln14"/>
+          <layout:Link link="sv3#page8#pwu1#ln27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="3" rowspan="3">
+        <layout:Unit unitId="sv3#page8#enu8">
+          <layout:Link link="sv3#page8#enu8#ln29"/>
+          <layout:Field field="sv3#page8#enu8#fld22"/>
+          <layout:Field field="sv3#page8#enu8#fld23"/>
+          <layout:Field field="sv3#page8#enu8#fld24"/>
+          <layout:Field field="sv3#page8#enu8#fld25"/>
+          <layout:Field field="sv3#page8#enu8#fld26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

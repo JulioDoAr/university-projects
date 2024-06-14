@@ -1,0 +1,15 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST" enctype="multipart/form-data">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        Are you want to delete this item ?
+        <input type="submit" value="Yes" />
+        <a href="{% url 'web:index' %}">Cancel </a>
+    </form>
+</div>
+
+{% endblock %}

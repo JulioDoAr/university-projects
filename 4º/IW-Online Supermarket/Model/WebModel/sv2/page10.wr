@@ -1,0 +1,50 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="620" gr:y="400" id="sv2#page10" name="MiCarrito" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv2#page10#inu4" name="MisProductos" entity="ent3" displayAttributes="ent3#att6 ent3#att10 ent3#att11" linkOrder="sv2#page10#inu4#ln23 sv2#page10#inu4#ln22">
+      <Link id="sv2#page10#inu4#ln23" name="Eliminar Unidad" to="sv2#seu11" type="normal" validate="true">
+        <LinkParameter id="sv2#page10#inu4#ln23#par69" name="oid_AttCondition9" source="data[].ent3#att8" target="sv2#seu11#su17#acond9"/>
+      </Link>
+      <Link id="sv2#page10#inu4#ln22" name="Sumar Unidad" to="sv2#seu8" type="normal" validate="true">
+        <LinkParameter id="sv2#page10#inu4#ln22#par72" name="oid_AttCondition11" source="data[].ent3#att8" target="sv2#seu8#su13#acond11"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page10#inu4">
+          <layout:Attribute attribute="ent3#att6"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att11"/>
+          <layout:Link link="sv2#page10#inu4#ln23"/>
+          <layout:Link link="sv2#page10#inu4#ln22"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

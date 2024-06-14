@@ -1,0 +1,28 @@
+<head>
+    <title>Amazdont - Login</title>
+</head>
+{% extends "web/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="row d-flex justify-content-left align-items-center" style="padding-left: 2%;">
+    
+    <div class="col-md-6">
+
+        <br />
+        <h2>Log In</h2>
+        Not a member yet? <a href="/register/">Register here</a>
+        <br>
+        <br />
+
+        <form method="post" class="boxBlack">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="actionButton">Log In</button>
+        </form>
+
+        {% endblock %}
+
+    </div>
+</div>

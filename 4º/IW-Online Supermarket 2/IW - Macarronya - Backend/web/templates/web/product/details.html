@@ -1,0 +1,39 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+{% load static %}
+
+<div class="row d-flex justify-content-left align-items-center" style="padding-left: 2%;">
+    <div class="col-md-6">
+
+        <br />
+        <h2>Product Info</h2>
+        <br />
+
+        <p class="boxOrange" style="width:fit-content; padding-right: 5%;">
+            <b> {{ product.name }} </b>
+        </p>
+
+        <p class="boxOrange">
+            Description: {{ product.description }}<br />
+            $&nbsp{{ product.price }}<br />
+
+
+            {% if product.status == 0 %}
+            <a href="{% url 'web:product_buy' id=product.id %}">
+                <button class="actionButton">Buy</button>
+            </a>
+            {% else %}
+            SOLD
+            {% endif %}
+        </p>
+
+
+    </div>
+    {% if product.image %}
+    <div class="col">
+        <img src="{{product.image.url}}" class="img-thumbnail" width="250" height="250">
+    </div>
+    {% endif %}
+    {% endblock %}
+</div>

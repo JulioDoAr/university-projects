@@ -1,0 +1,26 @@
+{% extends "web/base.html" %}
+{% block content %}
+{% load static %}
+
+<div class="row d-flex justify-content-left align-items-center" style="padding-left: 2%;">
+    <div class="col-md-6">
+
+        <br />
+        <h2>Edit Product</h2>
+        <br />
+
+        <!-- Create a Form -->
+        <form method="POST" class="boxBlack" enctype="multipart/form-data">
+            <!-- Security token by Django -->
+            {% csrf_token %}
+
+            <!-- form as paragraph -->
+            {{ form.as_p }}
+
+            <button type="submit" class="actionButton">Update</button>
+        </form>
+
+        {% endblock %}
+
+    </div>
+</div>

@@ -1,0 +1,59 @@
+body {
+    background: #d1d5db;
+}
+
+.boxOrange {
+    border: 2.5px solid #FF9900;
+    padding: 10px;
+    background: #ffffff;
+    width: 100%;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-left-width: 10px;
+    padding-left: 3%;
+    word-wrap: break-word;
+    float: left;
+    margin-right: 3%;
+}
+
+.boxBlack {
+    border: 2.5px solid #000000;
+    padding: 10px;
+    background: #ffffff;
+    width: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-width: 10px;
+    padding-left: 3%;
+    word-wrap: break-word;
+}
+
+.actionButton {
+    width: fit-content;
+    border: 0px;
+    background: #ececec;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    padding: 1%;
+}
+
+.searchInput {
+    width: 80%;
+    border: 0px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 2%;
+}
+
+.searchButton {
+    width: 20%;
+    border: 0px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 2%;
+}

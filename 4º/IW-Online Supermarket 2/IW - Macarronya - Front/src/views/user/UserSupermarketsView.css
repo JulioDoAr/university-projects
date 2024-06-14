@@ -1,0 +1,13 @@
+/* Style for the supermarket list */
+.supermarket-list {
+    display: grid;
+    padding: 1%;
+    margin: 1%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 30%));
+    gap: 1rem;
+    grid-auto-rows: minmax(200px, auto);
+}
+
+

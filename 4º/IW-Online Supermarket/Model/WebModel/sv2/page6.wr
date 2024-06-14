@@ -1,0 +1,85 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page6" name="Inicio" landmark="true" gr:x="-45" gr:y="95">
+  <ContentUnits>
+    <IndexUnit id="sv2#page6#inu2" name="Productos" gr:x="150" gr:y="0" entity="ent1" displayAttributes="ent1#att2 ent1#att4" linkOrder="sv2#page6#inu2#ln7">
+      <Selector id="sv2#page6#inu2#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page6#inu2#su4#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page6#inu2#ln7" name="A&#241;adir al carrito" to="sv2#seu5" type="normal" validate="true">
+        <LinkParameter id="sv2#page6#inu2#ln7#par27" name="oid_KeyCondition5 [oid]" source="data[].ent1#att1" target="sv2#seu5#su7#kcond5.ent1#att1"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit id="sv2#page6#enu4" name="Filtro" linkOrder="sv2#page6#enu4#ln4" gr:x="275" gr:y="0" entity="ent1">
+      <Link id="sv2#page6#enu4#ln4" name="Filtrar" to="sv2#seu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page6#enu4#ln4#par13" name="Max_PASSING" source="sv2#page6#enu4#fld11" passing="true"/>
+        <LinkParameter id="sv2#page6#enu4#ln4#par14" name="Min_PASSING" source="sv2#page6#enu4#fld10" passing="true"/>
+        <LinkParameter id="sv2#page6#enu4#ln4#par15" name="Name_PASSING" source="sv2#page6#enu4#fld9" passing="true"/>
+        <LinkParameter id="sv2#page6#enu4#ln4#par16" name="Name_NameCondition" source="sv2#page6#enu4#fld9" target="sv2#seu2#su3#acond1"/>
+        <LinkParameter id="sv2#page6#enu4#ln4#par17" name="Max_MaxCondition" source="sv2#page6#enu4#fld11" target="sv2#seu2#su3#acond2"/>
+        <LinkParameter id="sv2#page6#enu4#ln4#par21" name="Min_MinCondition" source="sv2#page6#enu4#fld10" target="sv2#seu2#su3#acond3"/>
+      </Link>
+      <Field id="sv2#page6#enu4#fld9" name="Name" type="string" modifiable="true" attribute="ent1#att2" contentType="text/plain"/>
+      <Field id="sv2#page6#enu4#fld10" name="Min" type="float" modifiable="true"/>
+      <Field id="sv2#page6#enu4#fld11" name="Max" type="float" modifiable="true"/>
+    </EntryUnit>
+    <SelectorUnit id="sv2#page6#seu4" name="LoadProducts" gr:x="0" gr:y="0" entity="ent1">
+      <Link id="sv2#page6#seu4#ln6" name="Flow6" to="sv2#page6#inu2" automaticCoupling="true" type="transport" validate="true"/>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page6#enu4">
+          <layout:Link link="sv2#page6#enu4#ln4"/>
+          <layout:Field field="sv2#page6#enu4#fld9"/>
+          <layout:Field field="sv2#page6#enu4#fld10"/>
+          <layout:Field field="sv2#page6#enu4#fld11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page6#inu2">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Link link="sv2#page6#inu2#ln7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

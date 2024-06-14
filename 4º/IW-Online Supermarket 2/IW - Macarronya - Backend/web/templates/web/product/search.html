@@ -1,0 +1,49 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+{% load static %}
+
+<div class="row d-flex justify-content-left align-items-center" style="padding-left: 2%;">
+    <div class="col-md-6">
+
+        <br />
+
+        <form method="GET" action="{% url 'web:search' %}" class="form-inline my-2 my-lg-0" style="width: 80%;">
+            <input type="text" class="searchInput" name="query" placeholder="" aria-label="Search" id="search">
+            <button type="submit" class="searchButton">Search</button>
+        </form>
+
+        <br />
+
+        {% for product in products %}
+
+        <br>
+
+        <div class="boxOrange" class="container-flex">
+
+
+            {% if product.image %}
+            <div class="col">
+                <img src="{{product.image.url}}" class="img-thumbnail" width="100" height="100">
+            </div>
+            {% endif %}
+
+            <div class="col">
+                {{ product.user }}
+                <b> {{ product.name }}</b> <br />
+                $&nbsp{{ product.price }}<br />
+
+                <a href="{% url 'web:product_details' id=product.id %}">
+                    <button class="actionButton">Description</button>
+                </a>
+            </div>
+
+
+
+        </div>
+
+        {% endfor %}
+        {% endblock %}
+
+    </div>
+</div>
